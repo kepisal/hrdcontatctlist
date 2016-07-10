@@ -8,13 +8,20 @@ import javax.naming.NamingException;
 
 public class DBUtility {
 	
-	private static Connection cn;
-	
-	public static Connection getConnection() throws SQLException{
-		cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/hrdstudents","root","0231");
-		//cn=DriverManager.getConnection("jdbc:postgres://localhost/")
-		return cn;
-	}
+	public static void main(String args[]) {
+	      Connection c = null;
+	      try {
+	         Class.forName("org.postgresql.Driver");
+	         c = DriverManager
+	            .getConnection("jdbc:postgresql://localhost:5432/hrdstudents",
+	            "postgres", "0231");
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	         System.err.println(e.getClass().getName()+": "+e.getMessage());
+	         System.exit(0);
+	      }
+	      System.out.println("Opened database successfully");
+	   }
 	
 }
 

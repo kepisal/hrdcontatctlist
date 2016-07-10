@@ -120,9 +120,13 @@ public class ObjectDAO {
 	/********************** Here is Connection Database *********************************/
 	static {
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			/*Class.forName("com.mysql.jdbc.Driver");
 			cn = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/hrdstudents", "root", "0231");
+					"jdbc:mysql://localhost:3306/hrdstudents", "root", "0231");*/
+			Class.forName("org.postgresql.Driver");
+	         cn = DriverManager
+	            .getConnection("jdbc:postgresql://localhost:5432/hrdstudents",
+	            "postgres", "0231");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
