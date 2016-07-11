@@ -1,0 +1,25 @@
+package Model;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+public class DAO_RetrieveObjects {
+	public ArrayList<email> ListObjects() throws SQLException, ClassNotFoundException {
+
+		String sql = "select * from tbemail";
+		java.sql.Statement stm = cn.createStatement();
+		ResultSet rs = stm.executeQuery(sql);
+		ArrayList<ObjectDTO> objectdto = new ArrayList<ObjectDTO>();
+		System.out.println(rs.getFetchSize());
+		/*
+		 * try { while (rs.next()) { objectdto.add(new
+		 * ObjectDTO(rs.getString("stu_id"), rs .getString("stu_name"),
+		 * rs.getInt("stu_gender"), rs .getString("stu_university"),
+		 * rs.getString("stu_class"), rs.getInt("stu_status"))); }
+		 * 
+		 * } catch (Exception e) { e.printStackTrace(); }
+		 */
+		return objectdto;
+	}
+}

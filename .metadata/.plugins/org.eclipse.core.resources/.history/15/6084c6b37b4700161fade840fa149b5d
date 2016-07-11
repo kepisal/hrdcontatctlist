@@ -1,0 +1,37 @@
+package Model;
+
+public class handphone {
+	private String phonenumber;
+	private String phonedescription;
+	private int phonestatus;
+	public handphone(String phonenumber, String phonedescription, int phonestatus) {
+		super();
+		this.phonenumber = phonenumber;
+		this.phonedescription = phonedescription;
+		this.phonestatus = phonestatus;
+	}
+	public String getPhonenumber() {
+		return phonenumber;
+	}
+	public void setPhonenumber(String phonenumber) {
+		this.phonenumber = phonenumber;
+	}
+	public String getPhonedescription() {
+		return phonedescription;
+	}
+	public void setPhonedescription(String phonedescription) {
+		this.phonedescription = phonedescription;
+	}
+	public int getPhonestatus() {
+		return phonestatus;
+	}
+	public void setPhonestatus(int phonestatus) {
+		this.phonestatus = phonestatus;
+	}
+	@Override
+	public String toString() {
+		return "handphone [phonenumber=" + phonenumber + ", phonedescription=" + phonedescription + ", phonestatus="
+				+ phonestatus + "]";
+	}
+	
+}

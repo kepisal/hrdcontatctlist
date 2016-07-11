@@ -11,6 +11,7 @@ import java.sql.*;
 
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
+import javax.swing.plaf.synth.SynthScrollBarUI;
 
 public class ObjectDAO {
 	static Connection cn;
@@ -21,11 +22,14 @@ public class ObjectDAO {
 	public ArrayList<ObjectDTO> list() throws SQLException,
 			ClassNotFoundException {
 
-		String sql = "select * from hrd_students";
+		String sql = "SELECT ps.ps_firstname,ps.ps_gender,inst.institue_position,hp.ph_number"
+				+ "FROM tbperson ps, tbinstitue inst, tbhandphone hp"
+				+ "where hp.ph_status>0";
 		java.sql.Statement stm = cn.createStatement();
 		ResultSet rs = stm.executeQuery(sql);
 		ArrayList<ObjectDTO> objectdto = new ArrayList<ObjectDTO>();
-		try {
+		System.out.println(rs.getFetchSize());
+		/*try {
 			while (rs.next()) {
 				objectdto.add(new ObjectDTO(rs.getString("stu_id"), rs
 						.getString("stu_name"), rs.getInt("stu_gender"), rs
@@ -35,7 +39,7 @@ public class ObjectDAO {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		}*/
 		return objectdto;
 	}
 
@@ -125,7 +129,7 @@ public class ObjectDAO {
 					"jdbc:mysql://localhost:3306/hrdstudents", "root", "0231");*/
 			Class.forName("org.postgresql.Driver");
 	         cn = DriverManager
-	            .getConnection("jdbc:postgresql://localhost:5432/hrdstudents",
+	            .getConnection("jdbc:postgresql://localhost:5432/hrdcontactlist",
 	            "postgres", "0231");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

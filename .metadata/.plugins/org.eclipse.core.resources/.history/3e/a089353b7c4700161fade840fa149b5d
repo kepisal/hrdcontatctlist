@@ -1,0 +1,10 @@
+package Model;
+
+public class institue {
+	private String institueid;
+	private String instituetitle;
+	private String institueaddress;
+	private String instituephone;
+	private String instituewebsite;
+	private String institueposition;
+}

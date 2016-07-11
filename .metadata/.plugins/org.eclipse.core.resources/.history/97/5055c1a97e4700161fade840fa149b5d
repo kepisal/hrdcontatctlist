@@ -1,0 +1,14 @@
+package Utilities;
+
+import java.sql.Connection;
+
+public class DatabaseUtilities {
+	public static Connection DatabaseConnection(){
+		try {
+			Class.forName("org.postgresql.Driver");
+			con
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

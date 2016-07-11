@@ -1,0 +1,7 @@
+package Utilities;
+
+import java.sql.Connection;
+
+public class DatabaseUtilities {
+	private Connection con=null;
+}
