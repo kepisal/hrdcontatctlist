@@ -8,12 +8,21 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<input class="cltest" type="button" onclick="testrequest();" value="YES" />
+	<input id="txtid" type="text"/>
+	<input id="btntest" class="cltest" type="button" onclick="testrequest()" value="YES" />
 </body>
 <script type="text/javascript">
 $(document).ready(function() {
 	lists(); // list all objects in table
-	
+	$("#btntest").click(function(data){
+		var psid=$("#txtid").val();
+		$.post("listobjectby.nk",{
+			ps_id : psid
+		},
+				function(data){		
+				alert(data);
+		});
+	});
 /*
  * generate rows inside table list
  * */
@@ -22,6 +31,7 @@ function lists() {
 		alert(data);
 	});
 }
+
 })
 </script>
 </html>

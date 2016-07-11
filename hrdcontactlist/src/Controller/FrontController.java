@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Action.retrieveobjects;
+import Action.retrieveobjectsby;
 
 @WebServlet("*.nk")
 public class FrontController extends HttpServlet {
@@ -19,51 +20,62 @@ public class FrontController extends HttpServlet {
 		super();
 	}
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doProcess(request, response);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doProcess(request, response);
 	}
 
-	protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doProcess(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String RequestURI = request.getRequestURI();
-		
+
 		System.out.println(RequestURI);
 		String contextPath = request.getContextPath();
 		System.out.println(contextPath);
 		String command = RequestURI.substring(contextPath.length());
 		ActionForward forward = null;
 		Action action = null;
-		
+
 		System.out.println(command);
-			
-		switch(command){
-			case "/listobject.nk":
-				action = new retrieveobjects();
-				try {
-					forward = action.execute(request, response);
-					System.out.println(forward);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-				break;
-						default :
-				forward = new ActionForward();
-				forward.setPath("404.jsp");
-				forward.setRedirect(false);
-				break;
-				
-	
+
+		switch (command) {
+		case "/listobject.nk":
+			action = new retrieveobjects();
+			try {
+				forward = action.execute(request, response);
+				System.out.println(forward);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
+			//listobjectby
+		case "/listobjectby.nk":
+			action = new retrieveobjectsby();
+			try {
+				forward = action.execute(request, response);
+				System.out.println(forward);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
+		default:
+			forward = new ActionForward();
+			forward.setPath("404.jsp");
+			forward.setRedirect(false);
+			break;
+
 		}
-		
+
 		if (forward != null) {
 			if (forward.isRedirect()) {
 				response.sendRedirect(forward.getPath());
 			} else {
-				RequestDispatcher dispatcher = request
-						.getRequestDispatcher(forward.getPath());
+				RequestDispatcher dispatcher = request.getRequestDispatcher(forward.getPath());
 				dispatcher.forward(request, response);
 			}
 
