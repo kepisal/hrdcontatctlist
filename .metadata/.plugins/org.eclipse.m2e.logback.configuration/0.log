@@ -111,3 +111,7 @@ Caused by: org.eclipse.aether.transfer.ArtifactTransferException: Failure to tra
 	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:503) ~[na:na]
 	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:421) ~[na:na]
 	... 8 common frames omitted
+2016-07-12 16:48:59,469 [main] INFO  c.t.i.a.b.BridgeConnectorRegistryProvider - No additional connectors were loaded from C:\Users\pisal\eclipse\jee-mars\eclipse\connectors.
+2016-07-12 16:48:59,674 [main] INFO  c.t.i.a.cache.MemoryOperationCache - Using CacheBuilder settings: CacheBuilder{initialCapacity=1000, concurrencyLevel=10, maximumSize=3000, expireAfterWrite=86400000000000ns, expireAfterAccess=43200000000000ns}
+2016-07-12 16:49:30,495 [main] INFO  c.t.i.a.cache.MemoryOperationCache - Using CacheBuilder settings: CacheBuilder{initialCapacity=1000, concurrencyLevel=10, maximumSize=3000, expireAfterWrite=86400000000000ns, expireAfterAccess=43200000000000ns}
+2016-07-12 16:49:30,966 [main] INFO  c.t.i.a.cache.MemoryOperationCache - Using CacheBuilder settings: CacheBuilder{initialCapacity=1000, concurrencyLevel=10, maximumSize=3000, expireAfterWrite=86400000000000ns, expireAfterAccess=43200000000000ns}

@@ -15,4 +15,5 @@
 <fullyQualifiedTypeName name="Model.DAO_RetrieveObjects"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="Model.email"/>
+<fullyQualifiedTypeName name="java.io.FileInputStream"/>
 </qualifiedTypeNameHistroy>

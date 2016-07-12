@@ -18,7 +18,6 @@ Date: 2016-07-12 06:37:54
 -- ----------------------------
 -- Sequence structure for sq_email
 -- ----------------------------
-DROP SEQUENCE "sq_email";
 CREATE SEQUENCE "sq_email"
  INCREMENT 1
  MINVALUE 1
@@ -30,7 +29,6 @@ CREATE SEQUENCE "sq_email"
 -- ----------------------------
 -- Sequence structure for sq_institue
 -- ----------------------------
-DROP SEQUENCE "sq_institue";
 CREATE SEQUENCE "sq_institue"
  INCREMENT 1
  MINVALUE 1
@@ -42,7 +40,7 @@ CREATE SEQUENCE "sq_institue"
 -- ----------------------------
 -- Sequence structure for sq_person
 -- ----------------------------
-DROP SEQUENCE "sq_person";
+
 CREATE SEQUENCE "sq_person"
  INCREMENT 1
  MINVALUE 1
@@ -54,7 +52,7 @@ CREATE SEQUENCE "sq_person"
 -- ----------------------------
 -- Sequence structure for sq_phone
 -- ----------------------------
-DROP SEQUENCE "sq_phone";
+
 CREATE SEQUENCE "sq_phone"
  INCREMENT 1
  MINVALUE 1

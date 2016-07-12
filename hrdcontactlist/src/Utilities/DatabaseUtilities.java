@@ -7,7 +7,9 @@ public class DatabaseUtilities {
 	public static Connection DatabaseConnection(){
 		try {
 			Class.forName("org.postgresql.Driver");
-			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/hrdcontactlist",
+			/*Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/hrdcontactlist",
+		            "postgres", "0231");*/
+			Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5433/hrdcontactdb",
 		            "postgres", "0231");
 			return con;
 		} catch (Exception e) {
