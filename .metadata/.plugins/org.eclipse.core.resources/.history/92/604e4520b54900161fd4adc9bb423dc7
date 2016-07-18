@@ -10,13 +10,6 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class readExcel {
 
-	public static String excel_filename=null;
-	public static String excel_path=null;
-	public readExcel(String filename, String filepath){
-		
-	}
-	
-	
 	public static void main(String[] args) {
 		String excelpath ="D:\\OneDrive\\workspacesjava\\Utilities\\contact_db.xlsx";
 		XSSFRow row=null;

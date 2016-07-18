@@ -16,4 +16,5 @@
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="Model.email"/>
 <fullyQualifiedTypeName name="java.io.FileInputStream"/>
+<fullyQualifiedTypeName name="Utilities.readExcel"/>
 </qualifiedTypeNameHistroy>
