@@ -1,8 +1,0 @@
-package Model;
-
-public class email {
-	private String email_id;
-	private String email_address;
-	private String email_description;
-	
-}

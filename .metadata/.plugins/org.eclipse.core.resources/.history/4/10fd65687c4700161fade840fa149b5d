@@ -1,9 +1,0 @@
-package Model;
-
-public class person {
-	private String personid;
-	private String personfirstname;
-	private String personlastname;
-	private int persongender;
-	
-}

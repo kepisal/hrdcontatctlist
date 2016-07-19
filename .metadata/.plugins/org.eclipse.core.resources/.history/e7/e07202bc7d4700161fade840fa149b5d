@@ -1,7 +1,0 @@
-package Action;
-
-import Controller.Action;
-
-public class retrieveobjects implements Action{
-
-}

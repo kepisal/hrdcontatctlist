@@ -1,8 +1,0 @@
-package Controller;
-
-import javax.servlet.annotation.WebServlet;
-
-@WebServlet("*.nk")
-public class FrontController {
-
-}
