@@ -1,14 +1,8 @@
 INDEX VERSION 1.3+C:\Users\pisal\Documents\GitHub\hrdcontatctlist\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-2355093541.index
 3453579424.index
-3855911508.index
-1365996527.index
-2121678750.index
-1182140995.index
-200371459.index
-954024151.index
-4167196301.index
-615208094.index
-1924860568.index
-3288133008.index
 1118771231.index
+615208094.index
+4167196301.index
+3855911508.index
+954024151.index
+2355093541.index
