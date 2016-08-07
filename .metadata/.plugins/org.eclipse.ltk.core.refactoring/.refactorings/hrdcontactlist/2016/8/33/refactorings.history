@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;hrdcontactlist/WebContent/js/script.js&apos; to &apos;pg_contact_form_script.js&apos;" description="Rename resource &apos;script.js&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/js/script.js" name="pg_contact_form_script.js" stamp="1470580536745" updateReferences="true"/>
+</session>

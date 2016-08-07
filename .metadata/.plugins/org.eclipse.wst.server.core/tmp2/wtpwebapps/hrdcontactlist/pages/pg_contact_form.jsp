@@ -206,6 +206,8 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
+     <!-- Custom Theme JavaScript -->
+    <script src="../js/pg_contact_form_script.js"></script>
 
 </body>
 

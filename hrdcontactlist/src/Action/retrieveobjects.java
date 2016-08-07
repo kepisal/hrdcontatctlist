@@ -22,13 +22,12 @@ public class retrieveobjects implements Action{
 		// TODO Auto-generated method stub
 		DAO_RetrieveObjects information = new DAO_RetrieveObjects();
 		ArrayList<objectinformation> objectlist = information.ListObjects();
-
+		
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
-		String obj= new Gson().toJson(objectlist);
+		String obj = new Gson().toJson(objectlist);
 		System.out.println(obj);
 		response.getWriter().write(obj);
-	
 		
 		return null;
 	}

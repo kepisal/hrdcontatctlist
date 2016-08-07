@@ -132,34 +132,16 @@
 									id="dataTables-example">
 									<thead>
 										<tr>
-											<th>No</th>
 											<th>Name</th>
 											<th>Position</th>
 											<th>Institue</th>
 											<th>Phone</th>
 											<th>E-mail</th>
-											<th>Action</th>
 										</tr>
 									</thead>
-									<!-- <tbody>
-                                        <tr class="odd gradeX">
-                                            <td>1</td>
-                                            <td>KIM TAE KYUNG</td>
-											<td>DIRECTOR</td>
-                                            <td>KSHRD CENTER</td>
-                                            <td class="center">(855)17 528 169</td>
-                                            <td class="center" >misoh049@gmail.com
-											</td>
-											<td>
-											<button class="btn btn-outline btn-info btn-xs" data-toggle="modal" data-target="#myModal">
-												view
-											</button>
-											<button class="btn btn-outline btn-warning btn-xs" data-toggle="modal" data-target="#myModal">
-												Edit
-											</button>
-											</td>
-                                        </tr>
-                                    </tbody> -->
+									<tbody id="tbbody">
+										<!-- Generation td -->
+									</tbody>
 								</table>
 							</div>
 							<!-- /.table-responsive -->
@@ -201,21 +183,24 @@
 	<!-- Page-Level Demo Scripts - Tables - Use for reference -->
 	<script>
 		$(document).ready(function() {
-			$.post("../listobject.nk", function(dataSet) {
+			$.post("../listobject.nk", function(response) {
 				$('#dataTables-example').dataTable({
-					data: dataSet,
-			        columns: [
-			            {title: "_fullname" },
-			            { title: "Name" },
-			            { title: "Position" },
-			            { title: "Institue" },
-			            { title: "Phone" },
-			            { title: "Email" },
-			            { title: "Action"}
-			        ]
+					lengthMenu: [[-1, 3, 5, 10], ["All", 3, 5, 10]],
+					processing : true,
+					data : response,
+					columns : [ {
+						data : "_fullname"
+					}, {
+						data : "_position"
+					}, {
+						data : "_institue"
+					},{
+						data : "_phone"
+					},{
+						data : "_email"
+					} ]
 				});
 			});
-			
 		});
 	</script>
 	<!-- Modal -->

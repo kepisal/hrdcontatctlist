@@ -1,18 +1,37 @@
 package Controller;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 import Action.retrieveobjects;
 import Action.retrieveobjectsby;
+import java.io.*;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileItemFactory;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.commons.io.FilenameUtils;
 
 @WebServlet("*.nk")
+@MultipartConfig
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -30,6 +49,8 @@ public class FrontController extends HttpServlet {
 		doProcess(request, response);
 	}
 
+	
+	
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String RequestURI = request.getRequestURI();
@@ -43,7 +64,10 @@ public class FrontController extends HttpServlet {
 
 		System.out.println(command);
 
-		switch (command) {
+		
+	switch(command)
+
+	{
 		case "/listobject.nk":
 			action = new retrieveobjects();
 			try {
@@ -54,8 +78,18 @@ public class FrontController extends HttpServlet {
 			}
 			break;
 			//listobjectby
+		
 		case "/listobjectby.nk":
 			action = new retrieveobjectsby();
+			try {
+				forward = action.execute(request, response);
+				System.out.println(forward);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
+		case "/uploadfile.nk":
+			action = new uploadfile();
 			try {
 				forward = action.execute(request, response);
 				System.out.println(forward);
@@ -71,15 +105,16 @@ public class FrontController extends HttpServlet {
 
 		}
 
-		if (forward != null) {
-			if (forward.isRedirect()) {
-				response.sendRedirect(forward.getPath());
-			} else {
-				RequestDispatcher dispatcher = request.getRequestDispatcher(forward.getPath());
-				dispatcher.forward(request, response);
-			}
+	if(forward!=null)
 
+	{
+		if (forward.isRedirect()) {
+			response.sendRedirect(forward.getPath());
+		} else {
+			RequestDispatcher dispatcher = request.getRequestDispatcher(forward.getPath());
+			dispatcher.forward(request, response);
 		}
 
 	}
-}
+
+}}
