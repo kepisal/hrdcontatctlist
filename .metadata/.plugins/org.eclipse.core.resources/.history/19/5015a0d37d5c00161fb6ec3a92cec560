@@ -1,0 +1,45 @@
+package Model;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import Utilities.DatabaseUtilities;
+
+public class DAO_RetrieveObjects {
+	protected Connection cn = DatabaseUtilities.DatabaseConnection();
+
+	public ArrayList<email> ListObjects() throws SQLException, ClassNotFoundException {
+		String sql = "select tp.ps_firstname ,tp.ps_lastname,ti.institue_position,ti.institue_title,th.ph_number,te.email_address"
+				+"FROM tbperson as tp, tbinstitue as ti,tbhandphone as th, tbemail as te"
+				+"where tp.ps_id = ti.ps_id and tp.ps_id=th.ps_id and tp.ps_id=te.ps_id";
+		java.sql.Statement stm = cn.createStatement();
+		ResultSet rs = stm.executeQuery(sql);
+		ArrayList<objectinformation> objects=new ArrayList<objectinformation>();
+		Person p=null;
+		try {
+			while (rs.next()) {
+				
+				objects.add(new objectinformation(new person().setPersonfirstname(rs.getString(1));, inst, phones, emails))
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return objectdto;
+	}
+
+	public ArrayList<email> retrieveobjectby(String psid) throws NumberFormatException, SQLException {
+		// TODO Auto-generated method stub
+		PreparedStatement ps = cn.prepareStatement("select * from tbemail where ps_id = ?");
+		ps.setInt(1, Integer.parseInt(psid));
+		ResultSet rs = ps.executeQuery();
+		ArrayList<email> alist = new ArrayList<email>();
+		while (rs.next()) {
+			alist.add(new email(Integer.toString(rs.getInt("email_id")), rs.getString("email_address"),
+					rs.getString("email_description")));
+		}
+		return alist;
+	}
+}
