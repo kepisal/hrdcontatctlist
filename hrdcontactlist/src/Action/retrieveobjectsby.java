@@ -9,7 +9,7 @@ import com.google.gson.Gson;
 
 import Controller.Action;
 import Controller.ActionForward;
-import Model.DAO_RetrieveObjects;
+import DAO.DAO_RetrieveObjects;
 import Model.email;
 
 public class retrieveobjectsby implements Action {

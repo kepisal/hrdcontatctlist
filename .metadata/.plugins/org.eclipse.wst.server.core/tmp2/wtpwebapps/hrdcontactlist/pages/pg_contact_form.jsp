@@ -168,7 +168,7 @@
                                         <button type="button" class="btn btn-danger btn-lg btn-block">Cancel</button>
                                     </form>
                                 </div>
-								<div class="col-lg-3">
+								<!-- <div class="col-lg-3">
 									<div class="form-group">
                                         <label>Picture Front</label>
                                         <input type="file">
@@ -177,7 +177,7 @@
                                         <label>Picture Back</label>
                                         <input type="file">
                                     </div>
-								</div>
+								</div> -->
                                 <!-- /.col-lg-6 (nested) -->
                             </div>
                             <!-- /.row (nested) -->

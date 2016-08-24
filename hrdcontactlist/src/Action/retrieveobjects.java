@@ -11,9 +11,9 @@ import com.google.gson.JsonObject;
 
 import Controller.Action;
 import Controller.ActionForward;
-import Model.DAO_RetrieveObjects;
+import DAO.DAO_RetrieveObjects;
+import DAO.objectinformation;
 import Model.email;
-import Model.objectinformation;
 
 public class retrieveobjects implements Action{
 

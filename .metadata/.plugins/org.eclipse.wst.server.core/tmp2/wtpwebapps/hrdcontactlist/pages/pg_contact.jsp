@@ -137,6 +137,7 @@
 											<th>Institue</th>
 											<th>Phone</th>
 											<th>E-mail</th>
+											<th>Type</th>
 										</tr>
 									</thead>
 									<tbody id="tbbody">
@@ -198,6 +199,8 @@
 						data : "_phone"
 					},{
 						data : "_email"
+					},{
+						data : "_type"
 					} ]
 				});
 			});
