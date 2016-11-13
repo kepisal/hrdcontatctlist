@@ -1,7 +1,0 @@
-package Model;
-
-public class organization {
-	private String _id;
-	private String _title;
-	private String _description;
-}
